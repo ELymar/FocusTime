@@ -14,8 +14,8 @@ region_enabled = true
 region_rect = Rect2( 0, 32, 16, 16 )
 
 [node name="Blocker" type="Sprite" parent="."]
-position = Vector2( 49.1256, 12.4845 )
-scale = Vector2( 5.25, 1.61621 )
+position = Vector2( 49.1256, 13.1233 )
+scale = Vector2( 5.25, 1.72267 )
 texture = ExtResource( 1 )
 offset = Vector2( 0, 1 )
 region_enabled = true

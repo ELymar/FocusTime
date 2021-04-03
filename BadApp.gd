@@ -1,21 +1,17 @@
-extends Node2D
-var Spawner = preload("res://Spawner.gd")
+extends KinematicBody2D
+
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	pass # Replace with function body.
 
-onready var spawner = Spawner.new()
+var velocity = 30
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-			
-
-
+	position += Vector2(0, 1).normalized() * velocity * delta
