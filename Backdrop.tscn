@@ -6,24 +6,25 @@
 scale = Vector2( 2, 2 )
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 64, 128 )
-scale = Vector2( 12, 24 )
+position = Vector2( 49.7644, 96 )
+scale = Vector2( 6.25, 12 )
 z_index = -2
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 32, 16, 16 )
 
 [node name="Blocker" type="Sprite" parent="."]
-position = Vector2( 64, 44 )
-scale = Vector2( 5.25, 1.98437 )
+position = Vector2( 49.1256, 12.4845 )
+scale = Vector2( 5.25, 1.61621 )
 texture = ExtResource( 1 )
 offset = Vector2( 0, 1 )
 region_enabled = true
 region_rect = Rect2( 0, 32, 16, 16 )
 
 [node name="Phone" type="Sprite" parent="."]
-position = Vector2( 64, 128 )
+position = Vector2( 52, 96 )
 texture = ExtResource( 1 )
+offset = Vector2( -2, 0 )
 region_enabled = true
 region_rect = Rect2( 96, 48, 97, 192 )
 region_filter_clip = true

@@ -1,7 +1,5 @@
 extends KinematicBody2D
-
-var Projectile = preload("res://Projectile.tscn")
-
+onready var Bullet = preload("res://Bullet.tscn")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -11,19 +9,16 @@ var velocity = 50
 func _ready():
 	pass # Replace with function body.
 
-func fire(event):
-	var projectile = Projectile.instance()
-	add_child(projectile)
-	projectile.scale = Vector2(0, 0)
-	projectile.position = position
-	projectile.velocity = -100
-	
+func fire():
+	var bullet = Bullet.instance()
+	get_parent().add_child(bullet)
+	bullet.position = position
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT:
 			if event.pressed:
-				fire(event)
+				fire()
 				print("Left button was clicked at ", event.position)
 			else:
 				print("Left button was released")
