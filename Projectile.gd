@@ -1,21 +1,19 @@
-extends Node2D
+extends KinematicBody2D
 
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 
-
+var velocity = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	print("Projectile")
+	print(position)
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	for c in get_children():
-		if "BadApp" in c.name:
-			c.position += Vector2(0, 1)
-
-
+	position.y += velocity * delta; 
