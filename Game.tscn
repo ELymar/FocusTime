@@ -10,5 +10,5 @@ position = Vector2( -56, -128 )
 scale = Vector2( 4, 4 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 200, 632 )
+position = Vector2( 200, 628 )
 scale = Vector2( 4, 4 )
