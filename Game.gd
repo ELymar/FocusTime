@@ -52,21 +52,22 @@ func fire():
 		print("Zero countdown")
 		decrement_bars(1)
 		bulletCountdown = 5
+
 		
-func _unhandled_input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT:
-			if event.pressed:
-				if !playing:
-					start()
-					title.queue_free()
-				else:
-					fire()
-				print("Left button was clicked at ", event.position)
-			else:
-				print("Left button was released")
-		if event.button_index == BUTTON_WHEEL_DOWN:
-			print("Wheel down")
+#func _unhandled_input(event):
+#	if event is InputEventMouseButton:
+#		if event.button_index == BUTTON_LEFT:
+#			if event.pressed:
+#				if !playing:
+#					start()
+#					title.queue_free()
+#				else:
+#					fire()
+#				print("Left button was clicked at ", event.position)
+#			else:
+#				print("Left button was released")
+#		if event.button_index == BUTTON_WHEEL_DOWN:
+#			print("Wheel down")
 			
 
 func start():
@@ -106,8 +107,17 @@ func _process(delta):
 		print("incrementing bars")
 		increment_bars(1)
 		bulletCountdown = 5
+	#$Button/AnimatedSprite.set_frame(0)
 		
-		
-		
-			
-
+func _on_Area2D_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT:
+			if event.pressed:
+				$Button/AnimatedSprite.set_frame(1)
+				if !playing:
+					start()
+					title.queue_free()
+				else:
+					fire()
+			else:
+				$Button/AnimatedSprite.set_frame(0)
