@@ -22,6 +22,8 @@ func _process(delta):
 
 signal BadApp_Killed
 
+signal BadApp_Floored
+
 func _on_Area2D_body_entered(body):
 	print("BadApp body entered: ", body)
 	if body.is_in_group("Bullets"):
@@ -31,4 +33,5 @@ func _on_Area2D_body_entered(body):
 			emit_signal("BadApp_Killed")
 	if body.is_in_group("Floors"):
 		queue_free()
+		emit_signal("BadApp_Floored")
 			

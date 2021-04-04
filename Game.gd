@@ -14,21 +14,23 @@ func add_to_score(amount):
 func decrement_health(amount):
 	health -= amount
 	$HUD.set_health(health)
+	if(health == 0):
+		game_over()
 
+func game_over():
+	var badApps = get_tree().get_nodes_in_group("BadApps")
+	for b in badApps:
+		b.velocity = 0
+	$Player.velocity = 0
+	$Spawner.queue_free()
+	print("Game Over!")
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
-
-onready var spawner = Spawner.new()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 			
 
-
-
-
-func _on_Floor_BadApp_Hit_Floor():
-	health -= 1; 
-	$HUD.set_health(health)

@@ -27,4 +27,3 @@ scale = Vector2( 2, 2 )
 [node name="Floor" parent="." instance=ExtResource( 5 )]
 position = Vector2( 194, 681 )
 scale = Vector2( 4, 4 )
-[connection signal="BadApp_Hit_Floor" from="Floor" to="." method="_on_Floor_BadApp_Hit_Floor"]

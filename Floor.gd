@@ -1,4 +1,4 @@
-extends Area2D
+extends KinematicBody2D
 
 
 # Declare member variables here. Examples:
@@ -16,9 +16,3 @@ func _ready():
 #func _process(delta):
 #	pass
 
-signal BadApp_Hit_Floor
-
-func _on_Floor_body_entered(body):
-	if body.is_in_group("BadApps"):
-		print("Baddie floor")
-		emit_signal("BadApp_Hit_Floor")
