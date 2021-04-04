@@ -10,22 +10,6 @@ func _ready():
 	add_to_group("Player")
 	pass # Replace with function body.
 
-func fire():
-	var bullet = Bullet.instance()
-	get_parent().add_child(bullet)
-	bullet.position = position
-
-func _unhandled_input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT:
-			if event.pressed:
-				fire()
-				print("Left button was clicked at ", event.position)
-			else:
-				print("Left button was released")
-		if event.button_index == BUTTON_WHEEL_DOWN:
-			print("Wheel down")
-			
 
 
 var direction = 1

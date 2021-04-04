@@ -7,6 +7,7 @@ extends Node2D
 
 var score = 0
 var health = 5
+var bars = 5
 
 func get_score():
 	return score 
@@ -14,6 +15,10 @@ func get_score():
 func set_score(score):
 	self.score = score; 
 	$Score.set_score(score)
+	
+func set_bars(bars):
+	self.bars = bars
+	$Bars.set_bars(bars)
 	
 func set_health(health):
 	self.health = health
