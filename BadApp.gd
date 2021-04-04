@@ -1,5 +1,6 @@
 extends KinematicBody2D
-
+var Cooldown = preload("res://Cooldown.gd")
+var cooldown = Cooldown.new(1)
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -18,6 +19,12 @@ var shake = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	cooldown.tick(delta)
+	if(cooldown.is_ready()):
+		if $AnimatedSprite.get_frame() == 0:
+			$AnimatedSprite.set_frame(1)
+		else:
+			$AnimatedSprite.set_frame(0)
 	position += Vector2(0, 1).normalized() * velocity * delta
 
 signal BadApp_Killed
@@ -28,6 +35,7 @@ func _on_Area2D_body_entered(body):
 	print("BadApp body entered: ", body)
 	if body.is_in_group("Bullets"):
 		health -= 50
+		$AnimatedSprite.set_frame(2)
 		if health <= 0:
 			queue_free()
 			emit_signal("BadApp_Killed")
