@@ -6,9 +6,14 @@ var Spawner = preload("res://Spawner.gd")
 # var b = "text"
 
 var score = 0
+var health = 5
 func add_to_score(amount):
 	score += amount
 	$HUD.set_score(score)
+
+func decrement_health(amount):
+	health -= amount
+	$HUD.set_health(health)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,3 +27,8 @@ func _process(delta):
 			
 
 
+
+
+func _on_Floor_BadApp_Hit_Floor():
+	health -= 1; 
+	$HUD.set_health(health)

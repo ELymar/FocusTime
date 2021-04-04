@@ -34,11 +34,4 @@ func _process(delta):
 	if position.x > 200 + 124 or position.x < 200 - 124:
 		direction *= -1
 		
-
-	
-
-
-func _on_Area2D_body_entered(body):
-	print(body)
-	if body.is_in_group("Bullets"):
-		print("Bullet entered")
+		
