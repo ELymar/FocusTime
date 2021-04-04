@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Digit.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Score.gd" type="Script" id=2]
 
 [node name="Score" type="Node2D"]
+script = ExtResource( 2 )
+score = 1024
 
 [node name="DigitThousands" parent="." instance=ExtResource( 1 )]
 

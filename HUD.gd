@@ -1,0 +1,24 @@
+extends Node2D
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+
+var score = 0
+
+func get_score():
+	return score 
+
+func set_score(score):
+	self.score = score; 
+	$Score.set_score(score)
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+	set_score(0)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	set_score(get_score() + 1)
