@@ -2,6 +2,9 @@ extends Node2D
 var Spawner = preload("res://Spawner.gd")
 var Bullet = preload("res://Bullet.tscn")
 var Cooldown = preload("res://Cooldown.gd")
+var Title = preload("res://Title.tscn")
+var GameOver = preload("res://GameOver.tscn")
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -10,7 +13,8 @@ var score = 0
 var health = 5
 var bars = 5
 var canShoot = true; 
-
+var playing = false; 
+var title
 var cooldownBar = Cooldown.new(5)
 
 func add_to_score(amount):
@@ -53,7 +57,11 @@ func _unhandled_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT:
 			if event.pressed:
-				fire()
+				if !playing:
+					start()
+					title.queue_free()
+				else:
+					fire()
 				print("Left button was clicked at ", event.position)
 			else:
 				print("Left button was released")
@@ -61,21 +69,38 @@ func _unhandled_input(event):
 			print("Wheel down")
 			
 
+func start():
+	$Spawner.reset()
+	$Player.reset()
+	health = 5
+	$HUD.set_health(health)
+	bars = 5
+	$HUD.set_bars(bars)
+	score = 0
+	$HUD.set_score(score)
+	playing = true
+	$Player.velocity = 50
 
 func game_over():
 	var badApps = get_tree().get_nodes_in_group("BadApps")
 	for b in badApps:
 		b.velocity = 0
 	$Player.velocity = 0
-	$Spawner.queue_free()
-	print("Game Over!")
+	$Spawner.stop()
+	playing = false
+	title = GameOver.instance()
+	add_child(title)
 	
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-
+	title = Title.instance()
+	add_child(title)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if !playing: 
+		return 
 	cooldownBar.tick(delta)
 	if cooldownBar.is_ready() && bars < 5:
 		print("incrementing bars")

@@ -20,9 +20,15 @@ func _ready():
 var spawn_xs = [ 88, 160, 232 ,304 ] 
 var cooldown_time = 3
 var spawn_cooldown = Cooldown.new(cooldown_time)
-var spawning = true 
+var spawning = false 
+func reset():
+	spawning = true
+	
 func stop():
 	spawning = false
+	for c in get_parent().get_children():
+		if c.is_in_group("BadApps"):
+			c.queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

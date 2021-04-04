@@ -23,6 +23,7 @@ scale = Vector2( 4, 4 )
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 position = Vector2( 200, 132 )
 scale = Vector2( 2, 2 )
+z_index = 10
 
 [node name="Floor" parent="." instance=ExtResource( 5 )]
 position = Vector2( 194, 681 )

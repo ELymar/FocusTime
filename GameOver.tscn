@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Backdrop.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Titles.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites7.png" type="Texture" id=3]
+
+[node name="GameOver" type="Node2D"]
+
+[node name="Backdrop" parent="." instance=ExtResource( 1 )]
+scale = Vector2( 4, 4 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 200.5, 272 )
+scale = Vector2( 15.5625, 7.5 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 32, 16, 16 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 200, 272 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 32, 64, 32 )
