@@ -31,7 +31,7 @@ func _on_Area2D_body_entered(body):
 		if health <= 0:
 			queue_free()
 			emit_signal("BadApp_Killed")
-	if body.is_in_group("Floors"):
+	if body.is_in_group("Floors") or body.is_in_group("Player"):
 		queue_free()
 		emit_signal("BadApp_Floored")
 			

@@ -7,6 +7,7 @@ onready var Bullet = preload("res://Bullet.tscn")
 var velocity = 50
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_to_group("Player")
 	pass # Replace with function body.
 
 func fire():
