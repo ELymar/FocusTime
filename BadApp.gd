@@ -24,4 +24,6 @@ func _process(delta):
 func _on_Area2D_body_entered(body):
 	print("BadApp body entered: ", body)
 	if body.is_in_group("Bullets"):
-		queue_free()
+		health -= 50
+		if health <= 0:
+			queue_free()
