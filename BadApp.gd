@@ -20,6 +20,7 @@ var shake = 0
 func _process(delta):
 	position += Vector2(0, 1).normalized() * velocity * delta
 
+signal BadApp_Killed
 
 func _on_Area2D_body_entered(body):
 	print("BadApp body entered: ", body)
@@ -27,3 +28,5 @@ func _on_Area2D_body_entered(body):
 		health -= 50
 		if health <= 0:
 			queue_free()
+			emit_signal("BadApp_Killed")
+			

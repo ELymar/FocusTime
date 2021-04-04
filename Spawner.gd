@@ -7,7 +7,10 @@ var BadApp = preload("res://BadApp.tscn")
 # var a = 2
 # var b = "text"
 
-
+func _on_BadApp_Killed():
+	get_parent().add_to_score(1)
+	
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -26,6 +29,7 @@ func _process(delta):
 		var choice = spawn_xs[randi() % spawn_xs.size()]
 		badApp.position = Vector2(choice, 80)
 		badApp.scale = Vector2(4, 4)
+		badApp.connect("BadApp_Killed", self, "_on_BadApp_Killed")
 
 	
 		

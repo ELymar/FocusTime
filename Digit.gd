@@ -15,7 +15,6 @@ func _ready():
 var digit = 0
 
 func set_digit(digit):
-	print("Setting digit", digit)
 	self.digit = digit
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
