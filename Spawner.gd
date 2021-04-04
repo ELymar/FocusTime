@@ -17,8 +17,6 @@ var cooldown_time = 3
 var spawn_cooldown = Cooldown.new(cooldown_time)
 
 
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	spawn_cooldown.tick(delta)

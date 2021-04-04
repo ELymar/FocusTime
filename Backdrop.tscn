@@ -21,6 +21,14 @@ offset = Vector2( 0, 1 )
 region_enabled = true
 region_rect = Rect2( 0, 32, 16, 16 )
 
+[node name="Blocker2" type="Sprite" parent="."]
+position = Vector2( 49.1256, 176.623 )
+scale = Vector2( 5.25, 1.72267 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, 1 )
+region_enabled = true
+region_rect = Rect2( 0, 32, 16, 16 )
+
 [node name="Phone" type="Sprite" parent="."]
 position = Vector2( 52, 96 )
 texture = ExtResource( 1 )

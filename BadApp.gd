@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Area2D
 
 
 # Declare member variables here. Examples:
@@ -11,6 +11,8 @@ func _ready():
 	pass # Replace with function body.
 
 var velocity = 30
+var health = 100
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
