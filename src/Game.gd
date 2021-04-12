@@ -1,9 +1,9 @@
 extends Node2D
-var Spawner = preload("res://Spawner.gd")
-var Bullet = preload("res://Bullet.tscn")
-var Cooldown = preload("res://Cooldown.gd")
-var Title = preload("res://Title.tscn")
-var GameOver = preload("res://GameOver.tscn")
+var Spawner = preload("res://src/Spawner.gd")
+var Bullet = preload("res://src/Bullet.tscn")
+var Cooldown = preload("res://src/Cooldown.gd")
+var Title = preload("res://src/Title.tscn")
+var GameOver = preload("res://src/GameOver.tscn")
 
 # Declare member variables here. Examples:
 # var a = 2

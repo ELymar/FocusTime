@@ -1,5 +1,5 @@
 extends KinematicBody2D
-var Cooldown = preload("res://Cooldown.gd")
+var Cooldown = preload("res://src/Cooldown.gd")
 var cooldown = Cooldown.new(1)
 var velocityCooldown = Cooldown.new(10)
 

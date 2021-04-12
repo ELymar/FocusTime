@@ -1,5 +1,5 @@
 extends KinematicBody2D
-onready var Bullet = preload("res://Bullet.tscn")
+onready var Bullet = preload("res://src/Bullet.tscn")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

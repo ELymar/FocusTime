@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Backdrop.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Backdrop.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Titles.png" type="Texture" id=2]
 
 [node name="Title" type="Node2D"]

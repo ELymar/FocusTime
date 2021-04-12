@@ -1,7 +1,7 @@
 extends Node
 
-var Cooldown = preload("res://Cooldown.gd")
-var BadApp = preload("res://BadApp.tscn")
+var Cooldown = preload("res://src/Cooldown.gd")
+var BadApp = preload("res://src/BadApp.tscn")
 
 # Declare member variables here. Examples:
 # var a = 2
